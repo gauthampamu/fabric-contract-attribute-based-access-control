@@ -1,7 +1,11 @@
 {
-   "connection_profile_filename":"../../gateway/ibp/fabric_connection.json",
-    "channel_name":"channel1",
-    "smart_contract_name":"gensupplychainnet",
-    "wallet":"../../gateway/ibp/gen_ibp_wallet",
-    "peerForEventsSubscription": "nd77f62-peerorg1.blockchain-work3.us-south.containers.appdomain.cloud:7051",
+    "connection_profile_filename": "../../gateway/ibp/ibp_connection_profile.json",
+    "channel_name": "channel1",
+    "smart_contract_name": "gensupplychainnet",
+    "wallet": "../../gateway/ibp/gen_ibp_wallet",
+    "appAdmin": "app-admin1",
+    "appAdminSecret": "app-admin1pw",
+    "orgMSPID": "Org6MSP",
+    "gatewayDiscovery": { "enabled": true, "asLocalhost": false },
+    "peerForEventsSubscription": "nd77f62-peerorg1.blockchain-work3.us-south.containers.appdomain.cloud:7051"
 }

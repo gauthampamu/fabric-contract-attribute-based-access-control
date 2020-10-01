@@ -46,7 +46,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     //
     //  NOTE: an admin identity is needed to invoke this API since it calls the CA methods. 
-    headers = headers.append('Authorization', 'Basic ' + btoa('admin:adminpw')); 
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
     // replace with this line to pass in the current user vs admin
     //headers = this.createUserAuthorizationHeader(headers);
     return this.httpClient.get(this.baseUrl + '/api/users/', {headers:headers});
@@ -58,7 +58,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     //
     //  NOTE: an admin identity is needed to invoke this API since it calls the CA methods. 
-    headers = headers.append('Authorization', 'Basic ' + btoa('admin:adminpw')); 
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
     // replace with this line to pass in the user trying to log in vs admin
     //headers = headers.append('Authorization', 'Basic ' + btoa(this.id+':'+this.pwd)); 
     return this.httpClient.get(this.baseUrl + '/api/users/'+ this.id, {headers:headers});
@@ -77,7 +77,7 @@ export class ApiService {
   queryOrder() {
     let headers = new HttpHeaders();
     //headers = this.createUserAuthorizationHeader(headers);
-    headers = headers.append('Authorization', 'Basic ' + btoa('admin:adminpw')); 
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
     return this.httpClient.get(this.baseUrl + '/api/orders/' + this.id, {headers:headers})
   }
 

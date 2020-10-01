@@ -370,10 +370,13 @@ supplychainRouter.route('/users/:id').get(function (request, response) {
     //  Get admin username and pwd from request header
     //  Only admin can call this api; this is not verified here;
     //  Possible future enhancement
+    console.log(">>>/users/:id" + request);
+
     getUsernamePassword(request)
         .then(request => {
             utils.isUserEnrolled(request.params.id).then(result1 => {
                 if (result1 == true) {
+                    console.log(">>> User is Enrolled ");
                     utils.getUser(request.params.id, request.username).then((result2) => {
                         response.status(STATUS_SUCCESS);
                         response.send(result2);

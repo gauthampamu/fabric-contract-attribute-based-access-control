@@ -3,7 +3,7 @@
 # This script runs through a sample scenario of creating Launches, Payloads 
 # It then takes a Payload and Launch through the process
 #
-# base64 encoded string 'YWRtaW46YWRtaW5wdw==' for 'admin:adminpw' added to authorization header
+# base64 encoded string 'Y2FhZG1pbjpjYWFkbWlucHc=' for 'admin:adminpw' added to authorization header
 # base64 encoded string 'V2FsbWFydDpXYWxtYXJ0' for 'Walmart:Walmart added to authorization header
 # base64 encoded string 'SEVCOkhFQg==' for 'HEB:HEB' added to authorization header
 # base64 encoded string 'QUJGYXJtOkFCRmFybQ==' for 'ABFarm:ABFarm' added to authorization header

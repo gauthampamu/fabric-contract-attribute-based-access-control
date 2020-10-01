@@ -14,8 +14,10 @@ spec:
     name: generic-ng
   ports:
   - protocol: TCP
-    port: 4200
+    port: 8084
+    nodePort: 30009
     targetPort: 4200
+  type: NodePort  
 ---
 #  Service to expose backend
 #  Dependencies:  
@@ -28,8 +30,10 @@ spec:
     name: generic-fabclient
   ports:
   - protocol: TCP
-    port: 3000
+    port: 8085
+    nodePort: 30010
     targetPort: 3000
+  type: NodePort  
 --- 
 #  yaml for deployment of backend node.js server and frontend angular app
 # 2 containers:  generic-fabclient = container for backend 
@@ -54,8 +58,13 @@ spec:
         env:
         - name: PLATFORM
           value: "IBP"
+        - name: APP_API_PORT
+          value: "30009"
+        - name: APP_API_HOST
+          value: "52.117.161.89"
       - name: generic-ng
         image: registry.ng.bluemix.net/customer_success/bc-generic-ng:1
+#        image: registry.ng.bluemix.net/customer_success/bc-generic-ng:1
         ports:
         - containerPort: 4200
         

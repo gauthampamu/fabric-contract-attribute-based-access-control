@@ -34,9 +34,9 @@ case $yn in
 esac
 echo ""
 echo "********** Get all identities (admin)"
-# base64 encoded string 'YWRtaW46YWRtaW5wdw==' for 'admin:admin' added to authorization header
+# base64 encoded string 'Y2FhZG1pbjpjYWFkbWlucHc=' for 'admin:admin' added to authorization header
 echo ""
-curl -X GET -H "authorization: Basic YWRtaW46YWRtaW5wdw==" "${API_URL}/api/users/" 
+curl -X GET -H "authorization: Basic Y2FhZG1pbjpjYWFkbWlucHc=" "${API_URL}/api/users/" 
 echo ""
 echo ""
 echo "********* Retailer 'Walmart' creates order-0001"

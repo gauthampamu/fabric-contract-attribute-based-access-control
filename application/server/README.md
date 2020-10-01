@@ -38,7 +38,7 @@ echo -n "userid:userpwd" | base64
 #### User Management:
 As 'admin:adminpw', register 'Walmart:Walmart' retailer with the Certificate Authority:
 ```
-curl -X POST "http://localhost:${PORT}/api/register-user" -H "authorization: Basic YWRtaW46YWRtaW5wdw==" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"userid\":\"Walmart\",\"password\":\"Walmart\",\"usertype\":\"retailer\"}"
+curl -X POST "http://localhost:${PORT}/api/register-user" -H "authorization: Basic Y2FhZG1pbjpjYWFkbWlucHc=" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"userid\":\"Walmart\",\"password\":\"Walmart\",\"usertype\":\"retailer\"}"
 ```
 As retailer 'Walmart:Walmart' enroll into wallet:
 ```
@@ -46,11 +46,11 @@ curl -X POST "http://localhost:${PORT}/api/enroll-user" -H "authorization: Basic
 ```
 As 'admin:adminpw', get all registered users:
 ```
-curl -X GET -H "authorization: Basic YWRtaW46YWRtaW5wdw==" "http://localhost:${PORT}/api/users/" 
+curl -X GET -H "authorization: Basic Y2FhZG1pbjpjYWFkbWlucHc=" "http://localhost:${PORT}/api/users/" 
 ```
 As 'admin:adminpw', determine if a user is enrolled
 ```
-curl -X GET -H "authorization: Basic YWRtaW46YWRtaW5wdw==" "http://localhost:${PORT}/api/is-user-enrolled/Walmart"
+curl -X GET -H "authorization: Basic Y2FhZG1pbjpjYWFkbWlucHc=" "http://localhost:${PORT}/api/is-user-enrolled/Walmart"
 ```
 #### Order Management:
 As retailer 'Walmart:Walmart', create an order which sets status to ORDER_CREATED:

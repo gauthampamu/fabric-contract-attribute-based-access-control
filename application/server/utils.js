@@ -64,7 +64,10 @@ utils.connectGatewayFromConfig = async () => {
         const platform = process.env.PLATFORM || 'LOCAL';
         if (platform == 'IBP') {
             configdata = JSON.parse(fs.readFileSync('../../gateway/ibp/config.json', 'utf8'));
+            console.log("****************************");
             console.log("Platform = " + platform);
+            console.log("Platform should IBP ");
+            
             bLocalHost = false;
         } else { // PLATFORM = LOCAL
             configdata = JSON.parse(fs.readFileSync('../../gateway/local/config.json', 'utf8'));
@@ -294,6 +297,10 @@ utils.setUserContext = async (userid, pwd) => {
         console.log("An identity for the user: " + userid + " does not exist in the wallet");
         console.log('Enroll user before retrying');
         throw ("Identity does not exist for userid: " + userid);
+    } else {
+        console.log("************************************************************");
+        console.log("An identity for the user: " + userid + " exist in the wallet");
+        
     }
 
     try {
@@ -323,12 +330,19 @@ utils.isUserEnrolled = async (userid) => {
 //  Purpose: get specific registered user
 utils.getUser = async (userid, adminIdentity) => {
     console.log(">>>getUser...");
+    console.log(">>>getUser... userid arg : " + userid);
+    console.log(">>>getUser... adminIdentity arg : " + adminIdentity);
     const gateway = new Gateway();
     // Connect to gateway as admin
     await gateway.connect(ccp, { wallet, identity: adminIdentity, discovery: { enabled: false, asLocalhost: bLocalHost } });
+    console.log(">>>getUser... getClient");
     let client = gateway.getClient();
+    console.log(">>>getUser... getCertificateAuthority");
     let fabric_ca_client = client.getCertificateAuthority();
+    console.log(">>>getUser... newIdentityService");
     let idService = fabric_ca_client.newIdentityService();
+    console.log(">>>getUser... getOne");
+    console.log(">>>getUser... getOne " + userid + " current " + gateway.getCurrentIdentity());
     let user = await idService.getOne(userid, gateway.getCurrentIdentity());
     let result = {"id": userid};
 
