@@ -347,8 +347,8 @@ utils.getUser = async (userid, adminIdentity) => {
     let result = {"id": userid};
 
     // for admin, usertype is "admin";
-    if (userid == "admin") {
-        result.usertype = userid;
+    if (userid == "app-admin1") {
+        result.usertype = "admin";
     } else { // look through user attributes for "usertype"
         let j = 0;
         while (user.result.attrs[j].name !== "usertype") j++;
