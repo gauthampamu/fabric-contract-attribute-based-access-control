@@ -79,7 +79,7 @@ export class OrderFormComponent implements OnInit {
       });
 
       for (let u of userArray) {
-        if (u['usertype'] == "producer") {
+        if (u['usertype'] == "producer" || u['usertype'] == "pharmaceutical") {
           this.producers.push(u);
         }
       }

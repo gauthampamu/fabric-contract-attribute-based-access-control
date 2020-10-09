@@ -3,8 +3,8 @@
     "channel_name": "channel1",
     "smart_contract_name": "gensupplychainnet",
     "wallet": "../../gateway/ibp/gen_ibp_wallet",
-    "appAdmin": "app-admin1",
-    "appAdminSecret": "app-admin1pw",
+    "appAdmin": "app-admin2",
+    "appAdminSecret": "app-admin2pw",
     "orgMSPID": "Org6MSP",
     "gatewayDiscovery": { "enabled": true, "asLocalhost": false },
     "peerForEventsSubscription": "nd77f62-peerorg1.blockchain-work3.us-south.containers.appdomain.cloud:7051"

@@ -25,7 +25,7 @@ export class UserManagementComponent implements OnInit{
   constructor(private api: ApiService, private auth: AuthService, private formBuilder: FormBuilder){}
 
   ngOnInit(){
-    this.types = ["retailer", "producer", "shipper", "customer", "regulator"];
+    this.types = ["retailer", "producer", "shipper", "customer", "regulator", "pharmaceutical", "pharmacy"];
 
     this.newUserForm = this.formBuilder.group({
       id: ['', Validators.required],

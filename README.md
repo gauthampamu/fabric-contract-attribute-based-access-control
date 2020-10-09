@@ -271,6 +271,52 @@ This should take you to the Customer Portal as *ACustomer*
 - Order transaction history should be displayed
 - Enter order id for avocado.  An error should appear indicating that the customer can't see this order. It hasn't made it through the process yet.  
 
+
+# Steps (Note: Connect the application to IBP instance running on MultiCloud3 cluster)
+1. [Clone the Repo](#step-1-clone-the-fork-repo)
+2. [Extract the tar file](#step-2-extract-files)
+3. [Build and Run the App](#step-3-build-and-run-the-app)
+4. [Login into the Application](#step-4-login-into-the-app)
+
+## Step 1. Clone the fork Repo
+
+Clone this repo onto your computer in the destination of your choice:
+```
+git clone https://github.com/gauthampamu/fabric-contract-attribute-based-access-control
+```
+
+## Step 2. Extract the tar file
+
+```
+cd fabric-contract-attribute-based-access-control
+tar -xvf gateway.tar 
+```
+
+## Step 3. Build and Run the app
+
+- Next, let's install the server-side app. Navigate to 
+`fabric-contract-attribute-based-access-control/application/server` and run 
+`npm install`.
+- Next, we need to install the UI dependencies. Navigate to 
+`fabric-contract-attribute-based-access-control/application/client` and run `npm install`.
+
+![buildandRunapp](https://user-images.githubusercontent.com/10428517/76376047-8b852800-6304-11ea-87b2-db6043e6e7cf.gif)
+
+- Navigate to 
+`fabric-contract-attribute-based-access-control/application/server` and run `node server.js` to connect start the API server to the fabric network. 
+- Navigate to 
+`fabric-contract-attribute-based-access-control/application/client` and run `ng serve` to run the Angular app.
+- Go to localhost:4200 to view the app.
+
+## Step 4: Login to the application
+
+Retailer: "Walmart", Producer: GHFarm
+Pharmacy: "Walgreen" and Pharmaceutical: Merck
+Shipper: UPS and Fedex
+
+User and Password is same
+
+
 ## IBM Blockchain Platform steps
 
 ### Prereqs:

@@ -76,8 +76,10 @@ class SupplychainContract extends Contract {
         
 
         if ((userType != "admin") && // admin only has access as a precaution.
-            (userType != "producer") &&
-            (userType != "retailer"))
+             (userType != "producer") &&
+             (userType != "pharmacy") &&
+             (userType != "pharmaceutical") &&
+             (userType != "retailer"))
             throw new Error(`This user does not have access to create an order`);
 
         const order_details = JSON.parse(args);
@@ -431,7 +433,8 @@ class SupplychainContract extends Contract {
                 }
                 break;
             }
-            case "producer": {
+            case "producer": 
+            case "pharmaceutical": {
                 queryString = {
                     "selector": {
                         "producerId": userId
@@ -447,6 +450,7 @@ class SupplychainContract extends Contract {
                 }
                 break;
             }
+            case "pharmacy": 
             case "retailer": {
                 queryString = {
                     "selector": {

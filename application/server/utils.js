@@ -347,7 +347,8 @@ utils.getUser = async (userid, adminIdentity) => {
     let result = {"id": userid};
 
     // for admin, usertype is "admin";
-    if (userid == "app-admin1") {
+    //TODO GPAMU Change
+    if (userid == "app-admin4") {
         result.usertype = "admin";
     } else { // look through user attributes for "usertype"
         let j = 0;
@@ -381,8 +382,9 @@ utils.getAllUsers = async (adminIdentity) => {
         tmp.id = identities[i].id;
         tmp.usertype = "";
 
-        if (tmp.id == "admin")
-            tmp.usertype = tmp.id;
+        //TODO GPAMU
+        if (tmp.id == "app-admin4")
+            tmp.usertype = "admin";
         else {
             attributes = identities[i].attrs;
             // look through all attributes for one called "usertype"

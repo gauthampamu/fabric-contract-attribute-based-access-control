@@ -22,7 +22,8 @@ export class AuthService {
 
   register(user){
     let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
+    //TODO GPAMU
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin4:app-admin4pw')); 
     return this.httpClient.post(this.baseUrl + '/api/register-user', user, {headers:headers,responseType:'text'});
   }
 

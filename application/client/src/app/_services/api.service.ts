@@ -46,7 +46,8 @@ export class ApiService {
     let headers = new HttpHeaders();
     //
     //  NOTE: an admin identity is needed to invoke this API since it calls the CA methods. 
-    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
+    //TODO GPAMU
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin4:app-admin4pw')); 
     // replace with this line to pass in the current user vs admin
     //headers = this.createUserAuthorizationHeader(headers);
     return this.httpClient.get(this.baseUrl + '/api/users/', {headers:headers});
@@ -56,9 +57,10 @@ export class ApiService {
   // The 'usertype' is retrieved to set the currentUser for this application
   getUser(){
     let headers = new HttpHeaders();
-    //
+    // 
+    //TODO GPAMU
     //  NOTE: an admin identity is needed to invoke this API since it calls the CA methods. 
-    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin4:app-admin4pw')); 
     // replace with this line to pass in the user trying to log in vs admin
     //headers = headers.append('Authorization', 'Basic ' + btoa(this.id+':'+this.pwd)); 
     return this.httpClient.get(this.baseUrl + '/api/users/'+ this.id, {headers:headers});
@@ -77,13 +79,14 @@ export class ApiService {
   queryOrder() {
     let headers = new HttpHeaders();
     //headers = this.createUserAuthorizationHeader(headers);
-    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin1:app-admin1pw')); 
+    //TODO GPAMU 
+    headers = headers.append('Authorization', 'Basic ' + btoa('app-admin4:app-admin4pw')); 
     return this.httpClient.get(this.baseUrl + '/api/orders/' + this.id, {headers:headers})
   }
 
   queryOrders() {
     let headers = new HttpHeaders();
-    headers = this.createUserAuthorizationHeader(headers);
+    headers = this.createUserAuthorizationHeader(headers);    
     this.httpClient.get<any[]>(this.baseUrl + '/api/orders/', {headers:headers}).subscribe (orders => {
       console.log (orders);
       // Add status to each order, based on this.statuses

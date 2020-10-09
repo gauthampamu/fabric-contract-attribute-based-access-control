@@ -2,11 +2,11 @@
 #
 
 PLATFORM="IBP"
-FABRIC_USER_ID="app-admin1"
-FABRIC_USER_SECRET="app-admin1pw"
-FABRIC_USER_TYPE="client"
+FABRIC_USER_ID="app-admin4"
+FABRIC_USER_SECRET="app-admin4pw"
+FABRIC_USER_TYPE="admin"
 
 export PLATFORM="IBP"
-export FABRIC_USER_ID="app-admin1"
-export FABRIC_USER_SECRET="app-admin1pw"
-export FABRIC_USER_TYPE="client"
+export FABRIC_USER_ID="app-admin4"
+export FABRIC_USER_SECRET="app-admin4pw"
+export FABRIC_USER_TYPE="admin"
